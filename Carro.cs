@@ -9,10 +9,28 @@ namespace POO
     class Carro
     {
         public string marca;
-        public string modelo;
+
+        // Nomenclatura
+        // todo atributo privado começa com _
+        public string _modelo;
         public int anoFabricacao;
 
         //  Metodos
+        // Get e Set
+        // get - Metodo para pegar um atributo privado
+        // set - metodo para alterar um atributo privado
+        public void SetModelos(string mod)
+        {
+            if (mod == "Fiesta" || mod == "HB20")
+            {
+                _modelo = mod;
+            }
+            else
+            {
+                Console.WriteLine("Alteração invalida");
+            }
+        }
+        
         public void Andar()
         {
             Console.WriteLine("Carro está andando!");
@@ -23,7 +41,7 @@ namespace POO
         }
         public void MostrarInformacoes()
         {
-            Console.WriteLine($"Marca: {marca}, Modelo: {modelo}, Ano de Fabricacao: {anoFabricacao}");
+            Console.WriteLine($"Marca: {marca}, Modelo: {_modelo}, Ano de Fabricacao: {anoFabricacao}");
         }
     }
 }
